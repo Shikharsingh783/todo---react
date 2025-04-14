@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const SplashScreen = ({ navigation }: any) => {
@@ -14,9 +14,11 @@ const SplashScreen = ({ navigation }: any) => {
         task easily.
       </Text>
 
+      <Image source = {require('../../assets/todo-icon.png')} style = {styles.image} />
+
       <View style={styles.buttonContainer}>
         <TouchableOpacity 
-          onPress={() => navigation.navigate('Todo')} 
+          onPress={() => navigation.navigate('MainTabs')} 
           style={styles.buttonContainer2}>
           {/* Icon in the button */}
           <Icon name="arrow-right" size={30} color="white" />
@@ -72,6 +74,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     borderRadius: 30,  // Rounded button
   },
+  image: {
+    marginTop: 50,
+    width: 360,
+    height: 400,
+  }
 });
 
 export default SplashScreen;
