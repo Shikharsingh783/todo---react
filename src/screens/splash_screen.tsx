@@ -1,24 +1,25 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const SplashScreen = ({ navigation }: any) => {
+const SplashScreen = ({navigation}: any) => {
   return (
     <View style={styles.container}>
-        <Text style={styles.text}>
-            Do a great work
-      </Text>
+      <Text style={styles.text}>Do a great work</Text>
       <Text style={styles.title}>
         Manage and {'\n'}
         Prioritize your{'\n'}
         task easily.
       </Text>
 
-      <Image source = {require('../../assets/todo-icon.png')} style = {styles.image} />
+      <Image
+        source={require('../../assets/todo-icon.png')}
+        style={styles.image}
+      />
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity 
-          onPress={() => navigation.navigate('MainTabs')} 
+        <TouchableOpacity
+          onPress={() => navigation.navigate('MainTabs')}
           style={styles.buttonContainer2}>
           {/* Icon in the button */}
           <Icon name="arrow-right" size={30} color="white" />
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
 
-  text : {
+  text: {
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'left',
@@ -61,9 +62,9 @@ const styles = StyleSheet.create({
     bottom: 20,
     right: 10,
     height: 60, // Slightly increased height for a better button
-    width: 90,  // Make the button square
+    width: 90, // Make the button square
     backgroundColor: 'black',
-    borderRadius: 0,  // Rounded button
+    borderRadius: 0, // Rounded button
   },
   buttonContainer: {
     justifyContent: 'center',
@@ -72,13 +73,13 @@ const styles = StyleSheet.create({
     bottom: 20,
     right: 30,
     backgroundColor: 'black',
-    borderRadius: 30,  // Rounded button
+    borderRadius: 30, // Rounded button
   },
   image: {
     marginTop: 50,
     width: 360,
     height: 400,
-  }
+  },
 });
 
 export default SplashScreen;
